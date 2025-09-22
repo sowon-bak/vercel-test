@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>greet</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>이름을 입력하세요</h1>
+    <form action="/greet" method="get">
+        <input type='text' name="name" placeholder="이름 입력">
+        <button type="submit">인사하기</button>
+    </form>
+
+    <!-- 동적 라우팅 -->
+    <!-- <form method="get" onsubmit="this.action='/greet/' + this.username.value">
+        <input type="text" id="username" placeholder="이름 입력" />
+        <button type="submit">인사하기</button>
+    </form> -->
+</body>
+</html>
