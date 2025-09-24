@@ -13,6 +13,7 @@ class BoardList(MethodView):
         return jsonify([{"id": board.id,
                          "title": board.title, 
                          "content": board.content, 
+                         "user_id": board.author.id,
                          "author_name": board.author.name,
                          "author_email": board.author.email} 
                          for board in boards])

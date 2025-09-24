@@ -4,7 +4,7 @@ from flask.views import MethodView
 from db import db
 from models import User
 
-user_blp = Blueprint('Users', 'users', description='Operations on users', url_prefix='/users')
+user_blp = Blueprint('Users', 'users', description='Operations on users', url_prefix='/user')
 
 @user_blp.route('/')
 class UserList(MethodView):
