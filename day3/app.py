@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_smorest import Api
 from db import db
+from models import User, Board
 
 app = Flask(__name__)
 
@@ -18,6 +19,12 @@ app.config["OPENAPI_SWAGGER_UI_URL"] = "https://cdn.jsdelivr.net/npm/swagger-ui-
 
 api = Api(app)
 
+from routes.board import board_blp
+from day3.routes.user import user_blp
+
+api.register_blueprint(board_blp)
+api.register_blueprint(user_blp)
+
 from flask import render_template
 @app.route('/manage-boards')
 def manage_boards():
@@ -29,6 +36,7 @@ def manage_users():
 
 if __name__ == '__main__':
     with app.app_context():
+        print("여기 실행?")
         db.create_all()
         
     app.run(debug=True)
